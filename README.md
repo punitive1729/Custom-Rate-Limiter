@@ -42,3 +42,7 @@ Then we access **TotalAccessTimes** to get total number of times user with userI
 # Regarding Auto Deletion
 
 Since LastMinuteAccessTimes table only needs to store records for 1 minute only. Therefore I have set TTL indexes which allows MONGO-DB to run an Auto-Deletion script at regular intervals. So our DB does not get overloaded with unnecessary clutter.
+
+# Alternative Approach
+There are many Rate Limiting Libraries like express-rate-limit. But I have decided to use MongoDB as express-rate-limiter I think stores data in **Cache** which is not scalable
+
