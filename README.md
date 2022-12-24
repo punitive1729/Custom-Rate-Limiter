@@ -23,7 +23,7 @@ ExpressJS
 
 5. Then use postman or any other similar tool to send **GET request** at http://localhost:8000/api/v1/url 
 
-6. Before sending **GET** request, we have to first set a variable **userId** = any integer in the Headers of the
+6. Before sending **GET** request, we have to first set a variable **userId** = any integer in the Headers of the request
 
 # Approach
 
