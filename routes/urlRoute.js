@@ -1,5 +1,5 @@
 const router = require('express').Router();
+const authController = require('./../Controllers/authController');
 const rateLimitController = require('./../Controllers/rateController');
-const endPointController = require('./../Controllers/endPointController');
-router.get('/url', rateLimitController, endPointController);
+router.get('/url', authController, rateLimitController);
 module.exports = router;

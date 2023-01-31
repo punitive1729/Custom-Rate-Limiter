@@ -1,15 +1,30 @@
-const mongoose = require('mongoose');
-const connectDB = () => {
-  const dbUrl = process.env.MONGO_DB_URL;
-  console.log(`Connecting DB... ${dbUrl}`);
-  mongoose
-    .connect(dbUrl)
-    .then(() => {
-      console.log('Connected to DB...');
-    })
-    .catch((err) => {
-      console.log('error connecting to DB..', err);
-    });
-};
+// Setup a Redis Client Connection
 
-module.exports = connectDB;
+const redis = require('redis');
+const client = redis.createClient();
+
+client.on('connect', function () {
+  console.log('Redis Database connected' + '\n');
+});
+
+client.on('reconnecting', function () {
+  console.log('Redis client reconnecting');
+});
+
+client.on('ready', function () {
+  console.log('Redis client is ready');
+});
+
+client.on('error', function (err) {
+  console.log('Something went wrong ' + err);
+});
+
+client.on('end', function () {
+  console.log('\nRedis client disconnected');
+  console.log('Server is going down now...');
+  process.exit();
+});
+
+client.connect();
+
+module.exports = client;
