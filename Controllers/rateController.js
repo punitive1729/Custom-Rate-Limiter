@@ -1,9 +1,11 @@
 const AppError = require('./../utils/AppError');
 const client = require('./../config/db');
 const SLIDING_WINDOW_LOG_SCRIPT = require('./../constants/slidingWindow');
+
 const REQUESTS_PER_WINDOW = process.env.REQUESTS_PER_WINDOW.toString();
 const WINDOW_SIZE_IN_MILLISECONDS =
   process.env.WINDOW_SIZE_IN_MILLISECONDS.toString();
+
 const rateLimitController = async (req, res, next) => {
   const userId = req.headers.userid;
   const { originalUrl } = req;
