@@ -1,7 +1,7 @@
 {
-  "name": "pillow.fund",
+  "name": "custom-rate-limiter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple Rate Limiter to work in distributed systems",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -12,8 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mongoose": "^6.8.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
